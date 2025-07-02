@@ -31,15 +31,32 @@
             denotationChar.className = "ql-mention-denotation-char";
             denotationChar.innerText = data.denotationChar;
             node.appendChild(denotationChar);
+            // Android Backspace Fix - invisible span to prevent hanging
+            const AndroidBackspaceFix = document.createElement("span");
+            AndroidBackspaceFix.innerHTML = "&nbsp;";
+            // it needs to be "visible" in order to work - so limit to minimal size.
+            AndroidBackspaceFix.setAttribute("style", "display: inline-block; height: 1px; width: 1px; overflow: hidden; ");
             if (typeof this.render === "function") {
                 node.appendChild(this.render(data));
             }
             else {
-                node.innerText += data.value;
+                const mentionValue = document.createElement("span");
+                mentionValue.className = "ql-mention-value";
+                mentionValue.innerText = data.value;
+                node.appendChild(mentionValue);
             }
+            //add the Android fix span at the end
+            node.appendChild(AndroidBackspaceFix);
             return MentionBlot.setDataValues(node, data);
         }
         static setDataValues(element, data) {
+            //set contenteditable on denotation char after DOM is ready
+            setTimeout(() => {
+                const denotationSpan = element.getElementsByClassName("ql-mention-denotation-char")[0];
+                if (denotationSpan) {
+                    denotationSpan.setAttribute("contenteditable", "inherit");
+                }
+            }, 0);
             const domNode = element;
             Object.keys(data).forEach((key) => {
                 domNode.dataset[key] = data[key];

@@ -1,5 +1,5 @@
 {
-  "name": "quill-mention",
+  "name": "quill-mention-custom",
   "version": "6.1.1",
   "description": "@mentions for the Quill rich text editor",
   "homepage": "https://quill-mention.com/",
@@ -28,7 +28,6 @@
   "license": "MIT",
   "files": [
     "dist",
-    "src",
     "LICENSE",
     "README.md"
   ],

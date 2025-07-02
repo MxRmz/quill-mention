@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1487ee63-bb56-470a-8573-6e442216f203" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/src/blots/mention.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/blots/mention.ts" afterDir="false" />
+    <list default="true" id="1487ee63-bb56-470a-8573-6e442216f203" name="Changes" comment="config files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/quill.mention.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/quill.mention.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/quill.mention.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/quill.mention.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="version_3.4.1_pure" />
+        <entry key="$PROJECT_DIR$" value="dist" />
         <entry key="$PROJECT_DIR$/quill-mention" value="master" />
       </map>
     </option>
@@ -55,20 +58,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="version_3.4.1" />
-                    <option name="lastUsedInstant" value="1722506229" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="version_3.4.1_pure" />
-                    <option name="lastUsedInstant" value="1722506062" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1722504018" />
-                  </RecentBranch>
-                  <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1720083287" />
+                    <option name="lastUsedInstant" value="1751461031" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dist" />
+                    <option name="lastUsedInstant" value="1751460635" />
                   </RecentBranch>
                 </list>
               </option>
@@ -100,17 +95,22 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/website",
+    "last_opened_file_path": "/home/website/quill-mention",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "settings.sync",
-    "ts.external.directory.path": "/snap/phpstorm/513/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "/home/website/quill-mention/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -253,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722506260510</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="config files">
+      <option name="closed" value="true" />
+      <created>1751460656555</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1751460656555</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +301,7 @@
     <MESSAGE value="build gitignore" />
     <MESSAGE value="update" />
     <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <MESSAGE value="config files" />
+    <option name="LAST_COMMIT_MESSAGE" value="config files" />
   </component>
 </project>
