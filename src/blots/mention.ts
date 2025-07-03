@@ -46,9 +46,12 @@ class MentionBlot extends Embed {
 
   static create(data?: MentionBlotData) {
     const node = super.create();
-    if (!isMentionBlotData(data) || node instanceof HTMLElement === false) {
+    if (!isMentionBlotData(data) || !(node instanceof HTMLElement)) {
       return node;
     }
+
+    const zeroWhiteSpace = document.createTextNode('\u200b');
+    node.appendChild(zeroWhiteSpace);
 
     const denotationChar = document.createElement("span");
     denotationChar.className = "ql-mention-denotation-char";
@@ -64,15 +67,41 @@ class MentionBlot extends Embed {
       node.appendChild(mentionValue);
     }
 
+    const androidFixSpan = document.createElement("span");
+    androidFixSpan.innerHTML = "&nbsp;";
+    androidFixSpan.setAttribute("style", "display: inline-block; height: 1px; width: 1px; overflow: hidden;");
+    node.appendChild(androidFixSpan);
+
     return MentionBlot.setDataValues(node, data);
   }
 
   static setDataValues(element: HTMLElement, data: MentionBlotData) {
+    setTimeout(() => {
+      const denotationSpan = element.getElementsByClassName("ql-mention-denotation-char")[0] as HTMLElement;
+      if (denotationSpan) {
+        denotationSpan.setAttribute("contenteditable", "inherit");
+      }
+    }, 0);
+
     const domNode = element;
     Object.keys(data).forEach((key) => {
       domNode.dataset[key] = data[key as keyof MentionBlotData];
     });
     return domNode;
+  }
+
+  update(mutations: MutationRecord[], context: any) {
+    for (const mutation of mutations) {
+      if (mutation.type === "attributes" && mutation.attributeName === "contenteditable") continue;
+
+      setTimeout(() => {
+        const sel = document.getSelection();
+        if (sel && sel.rangeCount > 0) {
+          this.remove();
+        }
+      }, 100);
+      return;
+    }
   }
 
   static value(domNode: HTMLElement): any {
